@@ -9,27 +9,27 @@ public class Main {
         int[][] A = new int[N][M];
         int[][] B = new int[M][P];
 
-        // INPUT MATRIX
-        for (int n = 0; n < N; n++) {
-            for (int m = 0; m < M; m++) {
-                A[n][m] = scanner.nextInt();
+        // MATRIX INPUT
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                A[i][j] = scanner.nextInt();
             }
         }
-        for (int m = 0; m < M; m++) {
-            for (int p = 0; p < P; p++) {
-                B[m][p] = scanner.nextInt();
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < P; j++) {
+                B[i][j] = scanner.nextInt();
             }
         }
 
         // CALCULATE & OUTPUT
         int[][] C = new int[N][P];
-        for (int n = 0; n < N; n++) {
-            for (int p = 0; p < P; p++) {
-                C[n][p] = 0;
-                for (int m = 0; m < M; m++) {
-                    C[n][p] += A[n][m] * B[m][p];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < P; j++) {
+                C[i][j] = 0;
+                for (int k = 0; k < M; k++) {
+                    C[i][j] += A[i][k] * B[k][j];
                 }
-                System.out.print(C[n][p] + " ");
+                System.out.print(C[i][j] + " ");
             }
             System.out.print('\n');
         }
